@@ -15,10 +15,11 @@ function StatusDot({ status, onClick }: { status: Status; onClick: () => void })
   return (
     <button
       onClick={(e) => { e.stopPropagation(); onClick(); }}
-      className="relative w-10 h-10 flex items-center justify-center shrink-0 -ml-2"
+      className="relative flex items-center justify-center shrink-0"
+      style={{ width: 44, height: 44, minWidth: 44 }}
       title={`${status} — tap to cycle`}
     >
-      <span className={`w-4 h-4 rounded-full ${colors[status]} transition-all active:scale-150`} />
+      <span className={`block w-5 h-5 rounded-full ${colors[status]} transition-all active:scale-125`} />
     </button>
   );
 }
@@ -106,7 +107,7 @@ function PillarTile({ pillar }: { pillar: Pillar }) {
 
       {/* Expanded goals */}
       {expanded && (
-        <div className="px-5 pb-4 max-h-64 overflow-y-auto space-y-1">
+        <div className="px-3 pb-4 space-y-0">
           {goals.map(g => (
             <div key={g.id} className="flex items-center gap-3 py-2 group">
               <StatusDot status={g.status} onClick={() => cycleGoalStatus(g.id)} />
