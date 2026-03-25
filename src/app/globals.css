@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #ffffff;
-  --color-foreground: #171717;
+  --color-background: #0a0a0a;
+  --color-foreground: #e5e5e5;
+  --color-surface: #141414;
+  --color-surface-hover: #1a1a1a;
+  --color-border: #262626;
   --color-mint: #4EEAAA;
   --color-mint-dark: #3DD89A;
+  --color-status-green: #22c55e;
+  --color-status-amber: #eab308;
+  --color-status-red: #ef4444;
   --color-gray-400: #9ca3af;
   --color-gray-500: #6b7280;
   --color-gray-600: #4b5563;
@@ -19,3 +25,8 @@ body {
   background: var(--color-background);
   color: var(--color-foreground);
 }
+
+/* Status dot colors */
+.dot-green { background-color: var(--color-status-green); }
+.dot-amber { background-color: var(--color-status-amber); }
+.dot-red { background-color: var(--color-status-red); }
