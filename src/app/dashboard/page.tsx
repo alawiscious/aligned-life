@@ -14,10 +14,12 @@ function StatusDot({ status, onClick }: { status: Status; onClick: () => void })
   };
   return (
     <button
-      onClick={onClick}
-      className={`w-3 h-3 rounded-full ${colors[status]} shrink-0 transition-colors hover:scale-125`}
+      onClick={(e) => { e.stopPropagation(); onClick(); }}
+      className="relative w-10 h-10 flex items-center justify-center shrink-0 -ml-2"
       title={`${status} — tap to cycle`}
-    />
+    >
+      <span className={`w-4 h-4 rounded-full ${colors[status]} transition-all active:scale-150`} />
+    </button>
   );
 }
 
